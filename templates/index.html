@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Summerisation</title>
+</head>
+<body>
+<form action="{{url_for('Summarize')}}" method="post">
+    <textarea name="data" rows="10" cols="100" style="margin-left:170px" placeholder="Write Paragraph to be summarized" required="required"></textarea>
+    <input type="range" min="20" max="1000" name="maxL" value="100">
+    <button type="reset">Clear</button>
+    <button type="submit">Submit</button>
+</form>
+    <h3 style="padding-left:170px">Summarized text</h3>
+    <textarea rows="10"cols="55" name="result" style="margin-left:170px">{{result}}</textarea>
+</body>
+</html>
