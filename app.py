@@ -1,5 +1,6 @@
 import requests
 from flask import Flask,render_template,url_for,request
+import os
 app=Flask(__name__)
 
 @app.route('/',methods=["GET","POST"])
@@ -9,9 +10,8 @@ def index():
 @app.route('/Summerize',methods=["GET","POST"])
 def Summarize():
     if request.method=="POST":
-        API_TOKEN = "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"
         API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
-        headers = {"Authorization": f"Bearer {API_TOKEN}"}
+        headers = {"Authorization": f"Bearer {os.environ['API_TOKEN']}"}
 
         data = request.form["data"]
         maxL = int(request.form["maxL"])
