@@ -1,8 +1,8 @@
 import requests
+import os
 
-API_TOKEN = "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"
 API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
-headers = {"Authorization": f"Bearer {API_TOKEN}"}
+headers = {"Authorization": f"Bearer {os.environ['API_TOKEN']}"}
 
 minL = int(input("Minimum length:"))
 maxL = int(input("Maximum length:"))
